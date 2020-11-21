@@ -8,4 +8,4 @@ The entry point is the org.semanticweb.swse.cli.* package, which allows for runn
 
 Another entry point are the test packages, where one can view small test-cases for individual components.
 
-A built.xml allows for building an executable jar; one is also included in the repository in the dist/ folder. Running this jar gives a list of possible classes to run from the CLI package.
+A build.xml allows for building an executable jar; such a jar (compiled with Java 6) is also included in the repository in the dist/ folder. Running this jar gives a list of possible classes to run from the CLI package.
