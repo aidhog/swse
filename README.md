@@ -4,6 +4,8 @@ Legacy code. The code was built from the ground up as a distributed system that 
 
 The code includes packages for crawling, ranking, reasoning, querying and searching large-scale RDF datasets.
 
-The entry point are the classes in the org.semanticweb.swse.cli.* package, which allows for running RMI servers and invoking them.
+The entry point is the org.semanticweb.swse.cli.* package, which allows for running RMI servers and invoking them.
 
 Another entry point are the test packages, where one can view small test-cases for individual components.
+
+A built.xml allows for building an executable jar; one is also included in the repository in the dist/ folder. Running this jar gives a list of possible classes to run from the CLI package.
