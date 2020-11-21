@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>    
+  <display-name>ReaLiDy</display-name>
+
+  <!-- Context initialization parameters that define shared
+  String constants used within your application, which
+  can be customized by the system administrator who is
+  installing your application.  The values actually
+  assigned to these parameters can be retrieved in a
+  servlet or JSP page by calling:
+  
+  String value = getServletContext().getInitParameter("name");
+
+  where "name" matches the <param-name> element of 
+  one of these initialization parameters.
+  
+  You can define any number of context initialization
+  parameters, including zero.
+  -->
+
+  <context-param>
+    <param-name>webmaster</param-name>
+    <param-value>juergen.umbrich@deri.org</param-value>
+    <description>
+      The EMAIL address of the administrator to whom questions
+      and comments about this application should be addressed.
+    </description>
+  </context-param>
+
+
+
+  <context-param>
+      <param-name>DATA</param-name>
+      <param-value>/Users/juum/Documents/Code/java/rmi/ui/data</param-value>
+    </context-param>
+
+
+  <servlet>
+    <servlet-name>ui</servlet-name>
+    <servlet-class>ie.deri.urq.cons_eval.Controller</servlet-class>
+  </servlet>
+
+  <!--
+  URL mapping (relative from this webapp's "root")
+  -->
+  
+  <servlet-mapping>
+    <servlet-name>ui</servlet-name>
+    <url-pattern>/next</url-pattern>
+  </servlet-mapping>
+
+<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+  <!--
+  Mime mapping
+  -->
+  <mime-mapping>
+    <extension>xml</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>html</extension>
+    <mime-type>text/html</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>rdf</extension>
+    <mime-type>application/rdf+xml</mime-type>
+  </mime-mapping>
+  
+    <mime-mapping>
+    <extension>n3</extension>
+    <mime-type>application/rdf+n3</mime-type>
+  </mime-mapping>
+</web-app>

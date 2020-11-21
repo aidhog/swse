@@ -1,0 +1,127 @@
+body{
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+div.index{
+	background-color: #cecece;
+	text-align: center;
+}
+
+h2{
+	background-color: #d0d0d0;
+	width: 500px;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+a.norm{
+	color: #65180e;
+}
+a{
+	text-decoration: none;
+	color: #000;	
+}
+a:hover{
+	text-shadow: #959595 2px 2px 2px;
+}
+
+.rnd{
+	border: 1px solid #090909;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-opera-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+
+}
+#frame{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1024px;
+}
+input {
+	
+	border: 1px solid #090909;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-opera-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+	text-align: center;
+	background-color: #f1f1f1;
+	font: small-caps 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#head{
+	
+}
+#getNewClass{
+	text-align: center;
+	border-bottom-style: solid;
+	padding-bottom: 10px;
+	border-bottom-width: 1px;
+}
+#comp{
+	width: 1024px;
+	background-color: #e0e0e0;
+	text-align: center;
+}
+
+#left{
+	width: 512px;
+	float: left;
+}
+.hide{
+	display: none;
+}
+
+#right{
+	width: 511px;
+	float: right;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+
+ul.statements{
+	height: 400px;
+	background-color: #fffefe;
+	width: 400px;
+	overflow: auto;
+	float: none;
+	padding-right: 0;
+	padding: 0;
+	margin-left: 25px;
+}
+li{
+	float: left;
+	list-style-type: disc;
+	text-align: left;
+	list-style-position: outside;
+	padding: 0;
+	margin: 5px 0 0 20px;
+	font-size: 14px;
+}
+li.in{
+	list-style-type: disc;
+	color: #000;
+}
+li.out{
+	list-style-type: circle;
+}
+span.prop{
+	background-color: #d2dfda;
+	padding: 3px 5px;
+}
+
+span.value{
+	margin-left: 25px;
+	float: left;
+	background-color: #dde09d;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 3px 5px;
+}

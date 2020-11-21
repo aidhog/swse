@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/nxparser-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/hobo.jar"/>
+	<classpathentry kind="lib" path="lib/idrank.jar"/>
+	<classpathentry kind="lib" path="lib/index.jar"/>
+	<classpathentry kind="lib" path="lib/jsc.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/ldspider-0.1-dev-ext.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/rmiio-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/saorr.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/sparqlparser-0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>    
+  <display-name>SWSE Simple Keyword</display-name>
+
+  <!-- Context initialization parameters that define shared
+  String constants used within your application, which
+  can be customized by the system administrator who is
+  installing your application.  The values actually
+  assigned to these parameters can be retrieved in a
+  servlet or JSP page by calling:
+  
+  String value = getServletContext().getInitParameter("name");
+
+  where "name" matches the <param-name> element of
+  one of these initialization parameters.
+  
+  You can define any number of context initialization
+  parameters, including zero.
+  -->
+
+  <context-param>
+    <param-name>webmaster</param-name>
+    <param-value>aidan.hogan@deri.org</param-value>
+    <description>
+      The EMAIL address of the administrator to whom questions
+      and comments about this application should be addressed.
+    </description>
+  </context-param>
+
+  <!--
+      This should be passed from within the startup script
+      that does the jetty startup
+      
+      Yars2 access is optional and disabled by default
+  -->
+  <context-param>
+    <param-name>servers</param-name>
+	<param-value>/usr/share/tomcat5.5/webapps/rmi-0.1-dev/servers.dat</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>spoc</param-name>
+	<param-value>/data/webdb/crawl/big3/index/spoc.nqz</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>sparse</param-name>
+	<param-value>/data/webdb/crawl/big3/index/spoc.sparse.nqz</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>lucene</param-name>
+	<param-value>/data/webdb/crawl/big3/index/lucene/</param-value>
+  </context-param>
+
+  <!--
+  Init and shutdown for web app
+  -->
+  <listener>
+    <listener-class>org.semanticweb.rmi.qp.webapp.Listener</listener-class>
+  </listener>
+
+  <!--
+  Mapping for the servlets.
+  -->
+  <servlet>
+    <servlet-name>swse</servlet-name>
+    <servlet-class>org.semanticweb.rmi.qp.webapp.Servlet</servlet-class>
+  </servlet>
+
+  <!--
+  URL mapping (relative from this webapp's "root")
+  -->
+  
+  <servlet-mapping>
+    <servlet-name>swse</servlet-name>
+    <url-pattern>/swse</url-pattern>
+  </servlet-mapping>
+
+  <!--
+  Mime mapping
+  -->
+  <mime-mapping>
+    <extension>xml</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>html</extension>
+    <mime-type>text/html</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>rdf</extension>
+    <mime-type>application/rdf+xml</mime-type>
+  </mime-mapping>
+  
+  <mime-mapping>
+    <extension>n3</extension>
+    <mime-type>application/rdf+n3</mime-type>
+  </mime-mapping>
+</web-app>

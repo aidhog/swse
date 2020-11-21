@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="swse" basedir="." default="dist">
+<property name="name" value="swse"/>
+	<property name="src" value="src"/>
+<property name="version" value="0.1-dev"/>
+<property name="dist" value="dist"/>
+  <path id="classpath">
+    <fileset dir="lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+		
+  <target name="prepare">
+    <tstamp />
+    <mkdir dir="bin"/>
+    <mkdir dir="dist"/>
+  </target>
+	  
+  <target name="dist" depends="prepare">
+    <javac destdir="bin"
+	   srcdir="src"
+	   includes="org/semanticweb/swse/**"
+           source="1.6" target="1.6"
+    	debug="true" debuglevel="lines,source">
+      <classpath refid="classpath"/>
+    </javac>
+
+    <!--
+    <copy file="src/com/ontologycentral/ldspider/tld/tld.dat" tofile="bin/com/ontologycentral/ldspider/tld/tld.dat"> </copy>
+    -->
+	  	
+    <jar jarfile="${dist}/${name}-${version}.jar" basedir="bin">
+      
+      <manifest>
+	<attribute name="Main-Class" value="org.semanticweb.swse.cli.Main"/>
+      </manifest>
+    	<!-- put common dependancies lower -->
+    	<zipfileset src="lib/hobo.jar"/>
+      <zipfileset src="lib/idrank.jar"/>
+      <zipfileset src="lib/ldspider-0.1-dev-ext.jar"/>
+    	<zipfileset src="lib/saorr.jar"/>
+    	<zipfileset src="lib/sparqlparser-0.1.jar"/>
+    	<zipfileset src="lib/index.jar"/>
+    	<zipfileset src="lib/rmiio-2.0.2.jar"/>
+    	<zipfileset src="lib/jsc.jar"/>
+    	<zipfileset src="lib/lucene-3.0.0.jar"/>
+        <zipfileset src="lib/nxparser-1.2.3.jar"/>    	
+    </jar>
+  </target>
+		
+  <target name="clean">
+    <delete dir="bin"/>
+    <delete>
+      <fileset dir="dist">
+	<include name="*.jar"/>
+      </fileset>
+    </delete>
+  </target>
+	
+  <target name="war" depends="dist">
+     <war destfile="${dist}/${name}-${version}.war"
+			 webxml="${src}/org/semanticweb/swse/qp/webapp/web.xml">  
+	    <fileset file="${src}/org/semanticweb/swse/qp/webapp/index.html"/>
+		<fileset file="${src}/org/semanticweb/swse/qp/webapp/servers.dat"/>
+		<lib file="${dist}/${name}-${version}.jar"/>
+	 </war>
+  </target>
+</project>
